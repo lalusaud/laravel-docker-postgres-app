@@ -1,0 +1,15 @@
+services:
+  app:
+    container_name: laravel-docker-postgres-app
+    build:
+      context: .
+      target: php
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - 8000:8000
+    networks:
+      - laravel-docker-postgres-app
+
+networks:
+  laravel-docker-postgres-app:
